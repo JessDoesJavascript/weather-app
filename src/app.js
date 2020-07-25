@@ -22,14 +22,14 @@ app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'The flipping weather',
+        title: 'The Weather Today',
         name: 'Jessie Chapman'
     });
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-    title: 'About this website',
+    title: 'About This Website',
     name: 'Jessie Chapman'
     });
 });

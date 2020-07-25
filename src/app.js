@@ -38,7 +38,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help Page',
-        helpMessage: 'Search for a location to find its current weather. Built with Node.js.',
+        helpMessage: 'Type a location into the search bar and press search to generate the current weather forecast.',
         name: 'Jessie Chapman'
     })
 })
@@ -46,7 +46,7 @@ app.get('/help', (req, res) => {
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
-            error: 'you must provide an address'
+            error: 'Please provide a location :\)'
         })
     } 
 
@@ -68,17 +68,7 @@ app.get('/weather', (req, res) => {
  
 });
 
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'you must provide a search term'
-        })
-    }
-    console.log(req.query);
-    res.send({
-        products: []
-    })
-})
+
 
 app.get('/help/*', (req, res) => {
     res.render('404', {

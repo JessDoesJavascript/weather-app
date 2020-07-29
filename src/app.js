@@ -22,14 +22,14 @@ app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'The Weather Today',
-        name: 'Jessie Chapman'
+        title: 'The Fucking Weather',
+        name: 'Jessie Fucking Chapman'
     });
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-    title: 'About This Website',
+    title: 'What the FUCK is this website?',
     name: 'Jessie Chapman'
     });
 });
@@ -37,16 +37,16 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help Page',
-        helpMessage: 'Type a location into the search bar and press search to generate the current weather forecast.',
-        name: 'Jessie Chapman'
+        title: 'Need some fucking help?',
+        helpMessage: 'Type in your favourite shit place into the search bar and press search to generate the current fucking weather forecast.',
+        name: 'Jessie fucking Chapman'
     })
 })
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
-            error: 'Please provide a location :\)'
+            error: 'Specify a location. You shit. '
         })
     } 
 
@@ -72,8 +72,8 @@ app.get('/weather', (req, res) => {
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
-        title: 'Page does not exist',
-        errorMessage: 'Sorry, help article not found',
+        title: 'What the fuck',
+        errorMessage: 'Literally no idea what the hell you are trying to do, pal',
         name: 'Jessie Chapman'
         
     });
@@ -81,8 +81,8 @@ app.get('/help/*', (req, res) => {
 
 app.get('*', (req, res) => {
     res.render('404', {
-        title: 'Page does not exist',
-        errorMessage: 'Sorry, page not found',
+        title: 'What the actual fuck',
+        errorMessage: 'Page does not fucking exist.',
         name: 'Jessie Chapman'
     });
 });
